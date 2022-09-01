@@ -39,7 +39,7 @@
 						<username>ramakapa</username>
 						<password>Lakshmi@99</password>
 						<applicationName>helloworld766</applicationName>
-						<environment>dev</environment>
+						<environment>sandbox</environment>
 						<region>us-east-2</region>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
