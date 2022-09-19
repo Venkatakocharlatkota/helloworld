@@ -1,6 +1,6 @@
 # This workflow will build a MuleSoft project and deploy to CloudHub
 
-name: Build and Deploy to Sandbox
+name: Build and Deploy to dev
 
 on:
   push:
@@ -69,7 +69,7 @@ jobs:
       with:
         name: artifacts
     
-    - name: Deploy to Sandbox
+    - name: Deploy to dev
       run: |
         artifactName=$(ls *.jar | head -1)
-          mvn package deploy -DmuleDeploy -Duri=https://anypoint.mulesoft.com/accounts/login/lafarge-holcim -Dusername=vkocharl -Dpassword=Welcome@2022 -Dapplication.name=helloworld766 -Denvironment=dev -Dworkers=1 -Dworker.type=MICRO  -Dmule.version=4.4.0 -Dapplication.name=helloworld766
+          mvn package deploy -DmuleDeploy -Duri=https://anypoint.mulesoft.com/accounts/login/lafarge-holcim -Dusername=vkocharl -Dpassword=Welcome@2022 -Dapplication.name=helloworld619 -Denvironment=dev -Dworkers=1 -Dworker.type=MICRO  -Dmule.version=4.4.0 
