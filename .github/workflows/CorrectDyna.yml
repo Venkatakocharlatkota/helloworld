@@ -72,4 +72,4 @@ jobs:
     - name: Deploy to Sandbox
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn package deploy -DmuleDeploy -Duri=https://anypoint.mulesoft.com -Dusername=ramakapa -Dpassword=Lakshmi@99 -Dapplication.name=helloworld766 -Denvironment=Sandbox -Dworkers=1 -Dworker.type=MICRO  -Dmule.version=4.4.0 -Dapplication.name=helloworld766
+         mvn package deploy -DmuleDeploy -Duri=https://https://anypoint.mulesoft.com/accounts/login/lafarge-holcim -Dusername=vkocharl -Dpassword=Welcome@2022 -Dapplication.name=helloworld766 -Denvironment=dev -Dworkers=1 -Dworker.type=MICRO  -Dmule.version=4.4.0 -Dapplication.name=helloworld766
