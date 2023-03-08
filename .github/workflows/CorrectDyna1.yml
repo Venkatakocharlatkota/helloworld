@@ -72,4 +72,4 @@ jobs:
     - name: Deploy to dev
       run: |
         artifactName=$(ls *.jar | head -1)
-          mvn package deploy -DmuleDeploy
+          mvn package deploy -DmuleDeploy -Danypoint.env=Sandbox -Danypoint.appName=helloworld766 -Danypoint.username=kapa2024 -Danypoint.password=Mulesoft@2023  -Danypoint.muleVersion=4.4.0 -Danypoint.region=us-east-1-Danypoint.workers=1 -Dworker.type=MICRO
