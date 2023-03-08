@@ -1,6 +1,6 @@
 # This workflow will build a MuleSoft project and deploy to CloudHub
 
-name: Build and Deploy to dev
+name: Build and Deploy to Sandbox
 
 on:
   push:
@@ -69,7 +69,14 @@ jobs:
       with:
         name: artifacts
     
-    - name: Deploy to dev
+    - name: Deploy to Sandbox
+      env:
+        USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         artifactName=$(ls *.jar | head -1)
-          mvn package deploy -DmuleDeploy -Danypoint.env=Sandbox -Danypoint.appName=helloworld766 -Danypoint.username=kapa2024 -Danypoint.password=Mulesoft@2023  -Danypoint.muleVersion=4.4.0 -Danypoint.region=us-east-1-Danypoint.workers=1 -Dworker.type=MICRO
+        mvn deploy -DmuleDeploy \
+         -Dmule.artifact=$artifactName \
+         -Danypoint.username="$USERNAME" \
+         -Danypoint.password="$PASSWORD" \
+         -DskipTests
